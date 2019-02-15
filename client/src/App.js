@@ -46,7 +46,6 @@ class App extends Component {
     axios
       .get(`https://leigh-node-blog.herokuapp.com/api/users/${id}/posts`)
       .then(res => {
-        console.log(res.data)
         this.setState({
           userPosts: res.data
         });

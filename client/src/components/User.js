@@ -6,9 +6,9 @@ const User = props => {
     return (
         <>
         <h1>{props.user.name}</h1>
-        <Route path ={`/${props.user.id}`} render={props => <UserPosts {...props} /> } />
-        <Link to={`/${props.user.id}`}><button onClick={e => props.getUserPosts(e, props.user.id)}>View Posts</button></Link>
+        <button onClick={e => props.getUserPosts(e, props.user.id)}><Link to={`/${props.user.id}`}>View Posts</Link></button>
         <button onClick={e => props.clearUserPosts(e)}>Clear</button>
+        <Route path ={`/:id`} render={props => <UserPosts {...props} /> } />
         </>
     )
 }
